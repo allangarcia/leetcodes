@@ -102,7 +102,7 @@ Lessons and feedback:
 
 1. The dictionary approach to counting the numbers and then showing the one with the count 1 does not work.
    And cannot guarantee that was the FIRST number that does not repeat, if you are thinking about traversing a dictionary,
-   that doesn't obey orders. In the soluction approach in 01, the array (ordered) is used twice to get the answer.
+   that doesn't obey orders. In the solution approach in 01, the array (ordered) is used twice to get the answer.
 
 2. This implemented logic does not work either for repeating numbers that appear 3 or more times.
 
