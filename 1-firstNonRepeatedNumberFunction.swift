@@ -62,7 +62,7 @@ func firstNonRepeatedNumber2(of arrayOfNumbers: [Int]) -> Int? {
 03
 */
 
-// That was my solution with more tome after the interview... but much more complex and less elegant then the first one.
+// That was my solution with more time after the interview... but much more complex and less elegant than the first one.
 
 func firstNonRepeatedNumber3(of arrayOfNumbers: [Int]) -> Int? {
 
