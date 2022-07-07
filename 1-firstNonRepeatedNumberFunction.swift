@@ -4,26 +4,67 @@ Problem: Write a function that given an array of numbers returns the first non-r
 Ex. given the array [ 5, 1, 1, 5, 4, -1 ] -> the answer should be 4
 */
 
-let arrayOfNumbers = [4, -1, 3, 5, 1, 1, 9, 1, 1, 3, 1, 1, 5, 4, -1, 0]
+let arrayOfNumbers = [9, 4, -1, 3, 5, 1, 1, 9, 1, 7, 1, 3, 1, 1, 5, 4, -1, 0]
 
-// FIXME: Not work for repeating 3 or more times
-// func firstNonRepeatedNumber2(of arrayOfNumbers: [Int]) -> Int? {
+/*
+01
+*/
 
-//   var seemBefore: [Int] = []
-
-//   for i in arrayOfNumbers.indices {
-//     let number = arrayOfNumbers[i]
-//     if !seemBefore.contains(number) {
-//       seemBefore.append(number)
-//     } else {
-//       seemBefore.removeAll(where: {$0 == number})
-//     }
-//   }
-
-//   return(seemBefore.first)
-// }
-
+// Remembering the apple's engineer solution, much more elegant and simple
 func firstNonRepeatedNumber(of arrayOfNumbers: [Int]) -> Int? {
+  
+  // Create a hashtable/dictionary to store the counts
+  var counter: [Int: Int] = [:]
+
+  // Traverse the array and count the numbers
+  for number in arrayOfNumbers {
+    counter[number] = (counter[number] ?? 0) + 1
+  }
+
+  // Traverse again the array looking for counts 1 in the dictionaty ;) I fucked up here.
+  for number in arrayOfNumbers {
+    if counter[number] == 1 {
+      return number
+    }
+  }
+
+  return nil
+}
+// NOTE: At first I started to pursue this idea, but doesn't occur to me that I could traverser the same array twice
+//       so the answer will be in order. This was almost the solution given by Apple Engineer in an interview. And the correct one.
+
+
+/*
+02
+*/
+
+// That second function was my attempt in the interview. NOT CORRECT AT ALL.
+
+func firstNonRepeatedNumber2(of arrayOfNumbers: [Int]) -> Int? {
+
+  var seemBefore: [Int] = []
+
+  for i in arrayOfNumbers.indices {
+    let number = arrayOfNumbers[i]
+    if !seemBefore.contains(number) {
+      seemBefore.append(number)
+    } else {
+      seemBefore.removeAll(where: {$0 == number})
+    }
+  }
+
+  return(seemBefore.first)
+}
+// FIXME: Not work for repeating 3 or more times
+
+
+/*
+03
+*/
+
+// That was my solution with more tome after the interview... but much more complex and less elegant then the first one.
+
+func firstNonRepeatedNumber3(of arrayOfNumbers: [Int]) -> Int? {
 
   struct OrderedNumber {
     let value: Int
@@ -60,10 +101,12 @@ if let number = firstNonRepeatedNumber(of: arrayOfNumbers) {
 Lessons and feedbacks:
 
 1. The dictionary approach into counting the numbers and then showing the one with the count 1 not work.
-   I cannot guarantee that was the FIRST number that not repeat.
+   And cannot guarantee that was the FIRST number that not repeat, if you are thinking about traverse a dictionary,
+   that doens't not obbey order. In the soluction approach in 01 the array (ordered) is used twice to get the answer.
 
 2. This this implemented logic not work either for repeating numbers that appears 3 or more times.
 
-3. I have to count and store also the order, them filter then to show the first one.
+3. The solution 03 works, but is more complex and not preferred. I have to count and store also the order, them filter
+   then to show the first one.
 
 */

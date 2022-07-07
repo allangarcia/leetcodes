@@ -1,0 +1,9 @@
+{
+  "grammarly.selectors": [
+    {
+      "language": "swift",
+      "scheme": "file",
+      "pattern": "1-firstNonRepeatedNumberFunction.swift"
+    }
+  ]
+}
