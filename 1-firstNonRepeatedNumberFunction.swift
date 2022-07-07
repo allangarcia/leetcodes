@@ -98,15 +98,15 @@ if let number = firstNonRepeatedNumber(of: arrayOfNumbers) {
 }
 
 /*
-Lessons and feedbacks:
+Lessons and feedback:
 
-1. The dictionary approach into counting the numbers and then showing the one with the count 1 not work.
-   And cannot guarantee that was the FIRST number that not repeat, if you are thinking about traverse a dictionary,
-   that doens't not obbey order. In the soluction approach in 01 the array (ordered) is used twice to get the answer.
+1. The dictionary approach to counting the numbers and then showing the one with the count 1 does not work.
+   And cannot guarantee that was the FIRST number that does not repeat, if you are thinking about traversing a dictionary,
+   that doesn't obey orders. In the soluction approach in 01, the array (ordered) is used twice to get the answer.
 
-2. This this implemented logic not work either for repeating numbers that appears 3 or more times.
+2. This implemented logic does not work either for repeating numbers that appear 3 or more times.
 
-3. The solution 03 works, but is more complex and not preferred. I have to count and store also the order, them filter
+3. Solution 03 works, but is more complex and not preferred. I have to count and store also the order, then filter
    then to show the first one.
 
 */
