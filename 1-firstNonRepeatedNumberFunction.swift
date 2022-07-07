@@ -1,5 +1,5 @@
 /*
-Problem: Write a function that give an array of numbers returns the first non-repeated number
+Problem: Write a function that given an array of numbers returns the first non-repeated number
 
 Ex. given the array [ 5, 1, 1, 5, 4, -1 ] -> the answer should be 4
 */
