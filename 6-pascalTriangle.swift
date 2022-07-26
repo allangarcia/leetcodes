@@ -13,7 +13,7 @@ triangle pascal like this:
 where the node bellow is the sum of the two above.
 */
 
-var numOfRows = 8
+var numOfRows = 10
 
 func solver(_ numOfRows: Int) -> [[Int]] {
     var answer = [[Int]]()
