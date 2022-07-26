@@ -12,3 +12,27 @@ For example, if N is 4, then there are 5 unique ways:
 What if, instead of being able to climb 1 or 2 steps at a time, you could climb any number from a set of positive 
 integers X? For example, if X = {1, 3, 5}, you could climb 1, 3, or 5 steps at a time. Generalize your function to take in X.
 */
+
+var numberOfSteps = 4
+var stepsAtTime = [1, 2]
+
+func waysToClimbAStair(ofSize size: Int, withSteps steps: [Int]) -> [[Int]] {
+
+    // Edge case for stair with 1 step
+    if size == 1 {
+        return [[1]]
+    }
+
+    var ways = [[Int]]()
+
+    // Solution
+
+    
+    return ways
+}
+
+let ways = waysToClimbAStair(ofSize: numberOfSteps, withSteps: stepsAtTime)
+
+for row in ways {
+    print(row)
+}
