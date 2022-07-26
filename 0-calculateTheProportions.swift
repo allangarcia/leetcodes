@@ -81,6 +81,6 @@ for each in dictionary {
     let model = each.key
     let minimum = min(each.value.0, each.value.1)
     
-    print("Model: \(model): expected padding = \(minimum / 78)")
+    print("Model: \(model): expected padding = \(minimum / 64)")
 
 }
