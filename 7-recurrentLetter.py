@@ -9,13 +9,12 @@ DBCABA -> B
 string = "DBCABA"
 counter = {}
 
-for char in string:
-  if char in counter:
-    counter[char] += 1
-  else:
+def return_recurring_char_in(given_string):
+  for char in given_string:
+    if char in counter:
+      return char
     counter[char] = 1
+  return None
 
-for char in string:
-  if counter[char] > 1:
-    print(char)
-    break
+result = return_recurring_char_in(string)
+print(result)
