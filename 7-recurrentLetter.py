@@ -10,9 +10,9 @@ string = "DBCABA"
 counter = {}
 
 for char in string:
-  try:
+  if char in counter:
     counter[char] += 1
-  except Exception:
+  else:
     counter[char] = 1
 
 for char in string:
