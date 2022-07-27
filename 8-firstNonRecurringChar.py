@@ -4,7 +4,7 @@
 #
 # Example: DBCABA -> B
 
-string = "BBAACCEEFOOPP"
+string = "AABBECC"
 counter = {}
 
 def first_non_recurring_char_in(given_string):
