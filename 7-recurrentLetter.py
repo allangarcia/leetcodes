@@ -1,10 +1,8 @@
-''''
-Question: https://www.youtube.com/watch?v=GJdiM-muYqc
-
-Give the first repeating letter given a string of random letters
-
-DBCABA -> B
-'''
+# Question: https://www.youtube.com/watch?v=GJdiM-muYqc
+#
+# Give the first repeating letter given a string of random letters
+#
+# Example: DBCABA -> B
 
 string = "DBCABA"
 counter = {}
