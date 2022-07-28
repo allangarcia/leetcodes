@@ -18,12 +18,12 @@ result should be 1
 """
 
 island_map = [
-    [0,1,1,1,1,1,1,1,1],
-    [1,0,1,1,1,1,1,1,1],
+    [1,1,1,1,1,1,1,1,1],
+    [1,1,1,1,1,1,1,1,1],
     [1,1,0,0,0,0,0,1,1],
     [1,1,0,0,0,0,0,1,1],
-    [1,1,0,0,1,1,0,1,1],
-    [1,1,0,0,1,1,0,0,0]
+    [1,1,0,0,0,0,0,1,1],
+    [1,1,0,0,0,0,0,0,0],
 ]
 
 # result shoud be 1
@@ -58,14 +58,14 @@ def countHowManyIslands(matrix_map):
         return 1
 
     # BEFORE
-    for i in range(0, len(mutable_matrix_map) - 1):
-        for j in range(0, len(mutable_matrix_map[i]) - 1):
+    for i in range(0, len(mutable_matrix_map)):
+        for j in range(0, len(mutable_matrix_map[i])):
             print(mutable_matrix_map[i][j], end="")
         print("")
 
     # PROCESS
-    for i in range(0, len(mutable_matrix_map) - 1):
-        for j in range(0, len(mutable_matrix_map[i]) - 1):
+    for i in range(0, len(mutable_matrix_map)):
+        for j in range(0, len(mutable_matrix_map[i])):
             if mutable_matrix_map[i][j] == 1:
                 count += depthFirstSearch(i, j)
 
