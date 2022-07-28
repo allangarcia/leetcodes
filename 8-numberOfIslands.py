@@ -1,7 +1,8 @@
 """
 Count the number of ilands in a 2 dimentional matrix
 
-A iland is defined to a portio
+- An island is defined to a portion of land represented by 1
+- Water is represented as 0
 
 example:
 [
@@ -15,9 +16,6 @@ example:
 
 result should be 1
 """
-
-from operator import index
-
 
 island_map = [
     [0,1,1,1,1,1,1,1,1],
