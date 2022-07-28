@@ -48,7 +48,7 @@ def countHowManyIslands(matrix_map):
         if mutable_matrix_map[i][j] == 1:
             mutable_matrix_map[i][j] = 0
 
-        # Search all sides
+        # Recursively search all sides (up, down, left, right)
         depthFirstSearch(i + 1, j)
         depthFirstSearch(i - 1, j)
         depthFirstSearch(i, j + 1)
@@ -70,10 +70,10 @@ def countHowManyIslands(matrix_map):
                 count += depthFirstSearch(i, j)
 
     # AFTER
-    for i in range(0, len(mutable_matrix_map) - 1):
-        for j in range(0, len(mutable_matrix_map[i]) - 1):
-            print(mutable_matrix_map[i][j], end="")
-        print("")
+    #for i in range(0, len(mutable_matrix_map) - 1):
+    #    for j in range(0, len(mutable_matrix_map[i]) - 1):
+    #        print(mutable_matrix_map[i][j], end="")
+    #    print("")
 
     print("Number of islands = ", count)
 
