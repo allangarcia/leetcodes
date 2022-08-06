@@ -16,23 +16,23 @@ integers X? For example, if X = {1, 3, 5}, you could climb 1, 3, or 5 steps at a
 from copy import copy
 
 
-n = 4
-steps = [1, 2]
+n = 10
+steps = [1, 3, 5]
 
 def ways_to_traverse_a_stair(n, steps):
     
     answers = []
     stack = []
+    mark_to_delete = []
     
     for step in steps:
         item = [step]
         stack.append(item)
     
     print("Start:", stack)
-    
-    control = 0
+
     while len(stack) > 0:
-        control += 1
+
         item = stack.pop()
     
         print("Before for:", stack)
@@ -46,27 +46,28 @@ def ways_to_traverse_a_stair(n, steps):
         
         print("Before clean:", stack)
 
-        for i in stack:
-            print("Cleaning:", i)
-            s = sum(i)
+        for item in stack:
+            print("Cleaning:", item)
+            s = sum(item)
+            print("Sum is:", s)
             if s == n:
-                local = copy(i)
+                local = copy(item)
                 answers.append(local)
-                stack.remove(i)
+                mark_to_delete.append(item)
             if s > n:
-                stack.remove(i)
+                mark_to_delete.append(item)
+
+        for remove_item in mark_to_delete:
+            stack.remove(remove_item)
+
+        mark_to_delete = []
     
         print("After clean:", stack)
-        print("---")
-        print("Stack:", stack)
-        print("Answers:", answers)
-    
-        if control > 0:
-            break
     
     return answers
 
 
-result = ways_to_traverse_a_stair(4, [1, 2])
+result = ways_to_traverse_a_stair(n, steps)
 
 print("Result =", result)
+print("Count =", len(result))
