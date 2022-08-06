@@ -56,6 +56,7 @@ def ways_to_traverse_a_stair(n, steps):
                 mark_to_delete.append(item)
             if s > n:
                 mark_to_delete.append(item)
+        # NOTE: In for-in state no changes could be made into the iterator itself.
 
         for remove_item in mark_to_delete:
             stack.remove(remove_item)
